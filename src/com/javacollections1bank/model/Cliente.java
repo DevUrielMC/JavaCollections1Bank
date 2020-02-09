@@ -16,6 +16,47 @@ public class Cliente {
 		
 	}
 
+	//Sobreescribimos nuestros métodos hashCode y equals asignandole parametros para que no imprima objetos con valores repetidos nuestra coleccion de tipo Set  hashSet
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result + ((numCuenta == null) ? 0 : numCuenta.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(saldo);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cliente other = (Cliente) obj;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		if (numCuenta == null) {
+			if (other.numCuenta != null)
+				return false;
+		} else if (!numCuenta.equals(other.numCuenta))
+			return false;
+		if (Double.doubleToLongBits(saldo) != Double.doubleToLongBits(other.saldo))
+			return false;
+		return true;
+	}
+	
+
 
 	public String getNombre() {
 		return nombre;

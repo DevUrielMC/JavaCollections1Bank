@@ -13,7 +13,7 @@ public class CuentasUsuarios {
 		Cliente clt2 = new Cliente ("Valeria","35465654464",35451.00);
 		Cliente clt3 = new Cliente ("Hugo","654121323125",654841513.00);
 		Cliente clt4 = new Cliente ("Tomasa","645414535885",989654631313.00);
-		
+		Cliente clt5 = new Cliente ("Tomasa","645414535885",989654631313.00);
 		//Creamos una colección de tipo HashSet para agregar clientes
 		Set<Cliente> clientesBanco= new HashSet<Cliente>();
 		
@@ -22,6 +22,7 @@ public class CuentasUsuarios {
 		clientesBanco.add(clt2);
 		clientesBanco.add(clt3);
 		clientesBanco.add(clt4);
+		clientesBanco.add(clt5);
 		
 		//Implementamos un For-Each para recorrer todos los elementos de tipo Cliente, dentro de la coleccion clientesBanco
 		for (Cliente cliente : clientesBanco) {
